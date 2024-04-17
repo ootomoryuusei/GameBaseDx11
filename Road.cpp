@@ -10,9 +10,9 @@ Road::Road(GameObject* parent)
 void Road::Initialize()
 {
 	hRoad_ = Model::Load("Model\\Road.fbx");
-	/*assert(hRoad_ <= 0);*/
+	assert(hRoad_ >= 0);
 	hWall_ = Model::Load("Model\\Wall.fbx");
-	/*assert(hWall_ <= 0);*/
+	assert(hWall_ >= 0);
 }
 
 void Road::Update()

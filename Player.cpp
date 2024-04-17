@@ -13,7 +13,6 @@ Player::Player(GameObject* parent)
 
 void Player::Initialize()
 {
-	/*hModel_ = Model::Load("Model\\psycho-pass.fbx");*/
 	hModel_ = Model::Load("Model\\Player.fbx");
 	assert(hModel_ >=0);
 	SphereCollider* collision = new SphereCollider(XMFLOAT3(0, 0.3, 0), 0.4f);

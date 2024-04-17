@@ -12,7 +12,6 @@ void Enemy::Initialize()
 {
 	hModel_ = Model::Load("Model\\Stone.fbx");
 	assert(hModel_ >= 0);
-	/*hPole_ = Model::Load("Model\\pole.fbx");*/
 	SphereCollider* collision = new SphereCollider(XMFLOAT3(-0.5,0.5, 0), 0.85);
 	AddCollider(collision);
 
