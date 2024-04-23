@@ -101,6 +101,8 @@
     <ClCompile Include="Road.cpp" />
     <ClCompile Include="GameOverScene.cpp" />
     <ClCompile Include="TitleScene.cpp" />
+    <ClCompile Include="ClearScene.cpp" />
+    <ClCompile Include="Gauge.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\BoxCollider.h">
@@ -178,6 +180,8 @@
     <ClInclude Include="Road.h" />
     <ClInclude Include="GameOverScene.h" />
     <ClInclude Include="TitleScene.h" />
+    <ClInclude Include="ClearScene.h" />
+    <ClInclude Include="Gauge.h" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Assets\Shader\Simple2D.hlsl">

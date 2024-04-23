@@ -2,15 +2,14 @@
 #include "Engine/GameObject.h"
 
 //テストシーンを管理するクラス
-class Player : public GameObject
+class ClearScene : public GameObject
 {
 private:
-	int hModel_;
-	bool isAlive_;
+	int hPict_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
-	Player(GameObject* parent);
+	ClearScene(GameObject* parent);
 
 	//初期化
 	void Initialize() override;
@@ -23,6 +22,4 @@ public:
 
 	//開放
 	void Release() override;
-
-	void OnCollision(GameObject* pTarget) override;
 };

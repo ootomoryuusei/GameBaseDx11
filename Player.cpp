@@ -4,11 +4,13 @@
 #include"Engine/Input.h"
 #include"Engine/Camera.h"
 #include"Engine/SphereCollider.h"
+#include"Engine/SceneManager.h"
 
 Player::Player(GameObject* parent)
 	:GameObject(parent,"Player"),hModel_(-1)
 {
 	transform_.position_ = { 0.5,0,0 };
+	isAlive_ = true;
 }
 
 void Player::Initialize()
@@ -29,6 +31,10 @@ void Player::Update()
 	if (Input::IsKey(DIK_D) && transform_.position_.x <1.9) {
 		transform_.position_.x += 0.1;
 	}
+	if (this->isAlive_ == false) {
+		SceneManager* cSM = (SceneManager*)(FindObject("SceneManager"));
+		cSM->ChangeScene(SCENE_ID_GAMEOVER);
+	}
 }
 
 void Player::Draw()
@@ -45,6 +51,7 @@ void Player::OnCollision(GameObject* pTarget)
 {
 	if (pTarget->GetObjectName() == "Enemy") {
 		this->KillMe();
+		this->isAlive_ = false;
 		pTarget->KillMe();
 	}
 }

@@ -2,6 +2,7 @@
 #include"Player.h"
 #include"Enemy.h"
 #include"Road.h"
+#include"Gauge.h"
 #include"Engine/Debug.h"
 
 namespace {
@@ -23,6 +24,7 @@ PlayScene::PlayScene(GameObject * parent)
 //‰Šú‰»
 void PlayScene::Initialize()
 {
+	Instantiate<Gauge>(this);
 	Instantiate<Player>(this);
 	for (int i = 0; i < RoadNum; i++) {
 		Road* road = Instantiate<Road>(this);

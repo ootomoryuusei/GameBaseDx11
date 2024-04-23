@@ -13,7 +13,7 @@ GameOverScene::GameOverScene(GameObject* parent)
 
 void GameOverScene::Initialize()
 {
-	hPict_ = Image::Load("GameOverScene.png");
+	hPict_ = Image::Load("gameover.png");
 	assert(hPict_ >= 0);
 }
 
