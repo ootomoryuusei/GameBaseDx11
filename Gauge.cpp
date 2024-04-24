@@ -19,12 +19,13 @@ void Gauge::Initialize()
 	goaltime_ = 10.0;
 	anitimer_ = 0.1;
 	aniframe_ = 0;
-	resettimer_ = 0.1;
+	resettimer_ = anitimer_;
 	time_ = 1.0 / 60.0;
 	transfm_ = transform_;
-	transfm_.position_.y = 0.9;
+	transfm_.position_.y = 0.86;
 	transfm_.position_.x = 0.66;
 	x_ = (gaugeMaxVal_ / goaltime_) / 60.0;
+	gtime_ = goaltime_;
 }
 
 void Gauge::Update()
@@ -32,7 +33,7 @@ void Gauge::Update()
 	gaugeCrrVal_ += x_;
 	goaltime_ -= time_;
 	anitimer_ -= time_;
-	transfm_.position_.x += 0.025/60.0;
+	transfm_.position_.x += (0.25/gtime_)/60.0;
 	if (anitimer_ <= 0) {
 		Image::SetTransform(hHuman_, transfm_);
 		Image::SetRect(hHuman_, 64 * aniframe_, 0, 64, 98.5);

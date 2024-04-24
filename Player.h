@@ -7,6 +7,7 @@ class Player : public GameObject
 private:
 	int hModel_;
 	bool isAlive_;
+	bool blockhit_; 
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）

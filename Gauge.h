@@ -16,6 +16,7 @@ private:
 	int aniframe_;
 	float resettimer_;
 	float time_;
+	float gtime_;
 	float x_;
 	Transform transfm_;
 public:

@@ -11,8 +11,9 @@ Enemy::Enemy(GameObject* parent)
 void Enemy::Initialize()
 {
 	hModel_ = Model::Load("Model\\Stone.fbx");
+	/*hModel_ = Model::Load("Model\\pole.fbx");*/
 	assert(hModel_ >= 0);
-	SphereCollider* collision = new SphereCollider(XMFLOAT3(-0.5,0.5, 0), 0.85);
+	SphereCollider* collision = new SphereCollider(XMFLOAT3(-0.5,0.3, 0), 0.4);
 	AddCollider(collision);
 
 }

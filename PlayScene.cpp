@@ -9,7 +9,7 @@ namespace {
 	int RoadLine = 3;
 	int SafeLine = 1;
 	int SponeEnemy = RoadLine - SafeLine;
-	int RoadNum = 10;
+	int RoadNum = 5;
 	float sponetimer = 1.0;
 	float timer = 0.0;
 	float resettimer = 0.0;
@@ -42,7 +42,7 @@ void PlayScene::Update()
 		for (int i = 0; i <= SponeEnemy; i++) {
 			if (i != x) {
 				Enemy* enemy = Instantiate<Enemy>(this);
-				enemy->SetPosition(XMFLOAT3(1.06 * i, 0, 200));
+				enemy->SetPosition(XMFLOAT3(1.06 * i, 0, 20*RoadNum));
 			}
 		}
 		timer = resettimer;
