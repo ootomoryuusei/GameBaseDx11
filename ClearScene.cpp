@@ -1,5 +1,7 @@
 #include "ClearScene.h"
 #include"Engine/Image.h"
+#include"Engine/SceneManager.h"
+#include"Engine/Input.h"
 
 ClearScene::ClearScene(GameObject* parent):GameObject(parent), hPict_(-1)
 {
@@ -13,6 +15,11 @@ void ClearScene::Initialize()
 
 void ClearScene::Update()
 {
+	if (Input::IsMouseButtonUp(0))
+	{
+		SceneManager* tSM = (SceneManager*)(FindObject("SceneManager"));
+		tSM->ChangeScene(SCENE_ID_PLAY);
+	}
 }
 
 void ClearScene::Draw()

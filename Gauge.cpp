@@ -2,7 +2,7 @@
 #include"Engine/Image.h"
 #include"Engine/SceneManager.h"
 
-Gauge::Gauge(GameObject* parent) : GameObject(parent),hGaugeBar_(-1),hGaugeFrame_(-1),hHuman_(-1), gaugeCrrVal_(0.0), gaugeMaxVal_(100.0)
+Gauge::Gauge(GameObject* parent) : GameObject(parent),hGaugeBar_(-1),hGaugeFrame_(-1),hHuman_(-1),hlife_(-1), gaugeCrrVal_(0.0), gaugeMaxVal_(100.0)
 {
 }
 
@@ -14,9 +14,11 @@ void Gauge::Initialize()
 	assert(hGaugeFrame_ >= 0);
 	hHuman_ = Image::Load("human.png");
 	assert(hHuman_ >= 0);
+	hlife_ = Image::Load("life.png");
+	assert(hlife_ >= 0);
 	transform_.position_.x = 0.8f;
 	transform_.position_.y = 0.7f;
-	goaltime_ = 10.0;
+	goaltime_ = 30.0;
 	anitimer_ = 0.1;
 	aniframe_ = 0;
 	resettimer_ = anitimer_;
@@ -61,6 +63,8 @@ void Gauge::Draw()
 	Image::SetTransform(hGaugeFrame_, transform_);
 	Image::Draw(hGaugeFrame_);
 	Image::Draw(hHuman_);
+	Image::SetTransform(hlife_, transform_);
+	Image::Draw(hlife_);
 }
 
 void Gauge::Release()

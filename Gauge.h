@@ -8,6 +8,7 @@ private:
 	int hGaugeBar_;
 	int hGaugeFrame_;
 	int hHuman_;
+	int hlife_;
 	float gaugeMaxVal_; //ゲージの最大値
 	float gaugeCrrVal_; //カレントの値(現在の値)
 
