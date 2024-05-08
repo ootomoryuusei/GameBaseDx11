@@ -6,6 +6,7 @@ class Player : public GameObject
 {
 private:
 	int hModel_;
+	int life_;
 	bool isAlive_;
 	bool blockhit_; 
 public:
@@ -26,4 +27,7 @@ public:
 	void Release() override;
 
 	void OnCollision(GameObject* pTarget) override;
+
+	void SetLife(int _life) { life_ = _life; }
+	int GetLife() { return life_; }
 };

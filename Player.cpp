@@ -19,6 +19,7 @@ Player::Player(GameObject* parent)
 	transform_.position_ = { 0.5,0,0 };
 	isAlive_ = true;
 	blockhit_ = false;
+	life_ = 5;
 }
 
 void Player::Initialize()
@@ -70,7 +71,7 @@ void Player::Update()
 		Camera::SetTarget(XMFLOAT3(0, 0, 0));
 		
 	}
-	
+	SetLife(life_);
 }
 
 void Player::Draw()
@@ -89,6 +90,7 @@ void Player::OnCollision(GameObject* pTarget)
 		/*this->KillMe();*/
 		this->isAlive_ = false;
 		blockhit_ = true;
+		life_ -= 1;
 		pTarget->KillMe();
 	}
 }

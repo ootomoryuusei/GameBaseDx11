@@ -1,4 +1,5 @@
 #pragma once
+#include"Player.h"
 #include "Engine/GameObject.h"
 
 //テストシーンを管理するクラス

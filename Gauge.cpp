@@ -1,4 +1,5 @@
 #include "Gauge.h"
+#include"Player.h"
 #include"Engine/Image.h"
 #include"Engine/SceneManager.h"
 
@@ -49,6 +50,8 @@ void Gauge::Update()
 		SceneManager* cSM = (SceneManager*)(FindObject("SceneManager"));
 		cSM->ChangeScene(SCENE_ID_CLEAR);
 	}
+	Image::SetTransform(hlife_, transfm_);
+	Image::SetRect(hlife_,0, 42.6 * GetLife(), 256,267);
 }
 
 
