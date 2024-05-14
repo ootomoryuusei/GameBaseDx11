@@ -2,7 +2,7 @@
 #include"Engine/Model.h"
 
 Road::Road(GameObject* parent)
-	:GameObject(parent,"Road"),hRoad_(-1),hWall_(-1)
+	:GameObject(parent,"Road"),hRoad_(-1),hWall_(-1),speed_(0.0)
 {
 	/*transform_.position_ = { -1.2,0,0 };*/
 }
@@ -17,6 +17,8 @@ void Road::Initialize()
 
 void Road::Update()
 {
+	/*speed_ = speed_ + 1.0 * 1.0 / 60.0;
+	transform_.position_.z -= speed_;*/
 }
 
 void Road::Draw()

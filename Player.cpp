@@ -22,6 +22,14 @@ Player::Player(GameObject* parent)
 	life_ = 5;
 }
 
+Player::Player()
+{
+	transform_.position_ = { 0.5,0,0 };
+	isAlive_ = true;
+	blockhit_ = false;
+	life_ = 5;
+}
+
 void Player::Initialize()
 {
 	hModel_ = Model::Load("Model\\Player.fbx");

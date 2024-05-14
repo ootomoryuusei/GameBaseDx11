@@ -1,7 +1,7 @@
 #include "Gauge.h"
-#include"Player.h"
 #include"Engine/Image.h"
 #include"Engine/SceneManager.h"
+#include"Player.h"
 
 Gauge::Gauge(GameObject* parent) : GameObject(parent),hGaugeBar_(-1),hGaugeFrame_(-1),hHuman_(-1),hlife_(-1), gaugeCrrVal_(0.0), gaugeMaxVal_(100.0)
 {
@@ -15,8 +15,8 @@ void Gauge::Initialize()
 	assert(hGaugeFrame_ >= 0);
 	hHuman_ = Image::Load("human.png");
 	assert(hHuman_ >= 0);
-	hlife_ = Image::Load("life.png");
-	assert(hlife_ >= 0);
+	//hlife_ = Image::Load("life.png");
+	//assert(hlife_ >= 0);
 	transform_.position_.x = 0.8f;
 	transform_.position_.y = 0.7f;
 	goaltime_ = 30.0;
@@ -50,8 +50,9 @@ void Gauge::Update()
 		SceneManager* cSM = (SceneManager*)(FindObject("SceneManager"));
 		cSM->ChangeScene(SCENE_ID_CLEAR);
 	}
-	Image::SetTransform(hlife_, transfm_);
-	Image::SetRect(hlife_,0, 42.6 * GetLife(), 256,267);
+	Player p;
+	/*Image::SetTransform(hlife_, transfm_);
+	Image::SetRect(hlife_,0, 42.6 * p.GetLife(), 256,267);*/
 }
 
 
@@ -66,8 +67,8 @@ void Gauge::Draw()
 	Image::SetTransform(hGaugeFrame_, transform_);
 	Image::Draw(hGaugeFrame_);
 	Image::Draw(hHuman_);
-	Image::SetTransform(hlife_, transform_);
-	Image::Draw(hlife_);
+	/*Image::SetTransform(hlife_, transform_);
+	Image::Draw(hlife_);*/
 }
 
 void Gauge::Release()

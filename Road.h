@@ -7,6 +7,7 @@ class Road : public GameObject
 private:
 	int hRoad_;
 	int hWall_;
+	float speed_;
 public:
 	//コンストラクタ
 	//引数：parent  親オブジェクト（SceneManager）
